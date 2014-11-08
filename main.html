@@ -1,4 +1,4 @@
-<ion-slide-box show-pager="false" active-slide="currntSlide">
+<ion-slide-box show-pager="false" active-slide="currntSlide" on-slide-changed="slideHasChanged()">
     <ion-slide ng-controller="SettingsCtrl">
         <ng-include src="'settings.html'"></ng-include>
     </ion-slide>

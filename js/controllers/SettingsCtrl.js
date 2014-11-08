@@ -58,4 +58,7 @@ tohelp.controller('SettingsCtrl', function($scope,MyHelps,$timeout,$ionicScrollD
     $scope.newCardShown = false;
     $scope.helps = MyHelps.GetHelps();
     $scope.resetNewCard();
+    $scope.$on('slideChanged',function(){
+        $scope.newCardShown = false;
+    });
 });
