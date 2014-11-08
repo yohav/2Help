@@ -7,7 +7,7 @@
         <div ng-show="isNewCardShown()" class="help-settings-card">
             <div class="container" ng-style="{'background-color':newCard.background_color, 'color':newCard.color}">
                 <span class="need-help">I need help in</span>
-                <textarea rows="3" ng-blur="closeIfEmpty()" ng-keydown="check($event)" ng-model="newCard.text" autofocus maxlength="40" ng-style="{'background-color':newCard.background_color, 'color':newCard.color}"></textarea>
+                <textarea rows="3"  ng-keydown="check($event)" ng-model="newCard.text" autofocus maxlength="40" ng-style="{'background-color':newCard.background_color, 'color':newCard.color}"></textarea>
                 <span class="card-char-num">{{40 - newCard.text.length}}</span>
                 <span class="publish-new-card" ng-click="publish()">Publish</span>
                 <span ng-show="newCard.text.length != 0" class="change-color-span" ng-click="changeColor()"><i class="icon ion-shuffle"></i></span>
