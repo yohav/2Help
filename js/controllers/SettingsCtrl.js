@@ -59,6 +59,9 @@ tohelp.controller('SettingsCtrl', function($scope,MyHelps,$timeout,$ionicScrollD
     $scope.helps = MyHelps.GetHelps();
     $scope.resetNewCard();
     $scope.$on('slideChanged',function(){
-        $scope.newCardShown = false;
+        $timeout(function(){
+            $('.user-input').blur();
+            $scope.newCardShown = false;
+        },1000);
     });
 });
