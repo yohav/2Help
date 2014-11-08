@@ -1,0 +1,128 @@
+.title{
+    color: #2e8b57 !important;
+}
+.title-2help{
+    top: -2px !important;
+}
+.yes-text {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 30px;
+    color: rgb(111, 250, 111);
+    opacity: 0;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+.no-text {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    color: rgb(255, 115, 115);
+    opacity: 0;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.scroll{
+    padding:10px;
+}
+
+.header-icon{
+    margin-top: 8px;
+    display: block;
+    font-size: 30px;
+}
+
+.help-settings-card{
+    width: 200px;
+    height: 200px;
+    margin:30px auto;
+}
+.help-settings-card .container{
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    box-shadow: 3px 3px 11px 0 rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 3px 3px 11px 0 rgba(50, 50, 50, 0.75);
+    border-radius: 30px;
+    position: relative;
+}
+
+.swipe-card{
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    width: 200px;
+    height: 200px;
+}
+
+.help-text{
+    word-break: break-all;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+}
+
+.help-settings-card textarea{
+    text-align: center;
+    resize: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+}
+
+.need-help{
+    font-size: 15px;
+
+}
+
+.new-card-btn{
+    font-size: 30px !important;
+}
+
+.cards-header-btn{
+    margin: 0 !important;
+    color: #ccc !important;
+}
+.cards-header-btn:before{
+    font-size: 30px !important;
+}
+
+.card-char-num{
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+}
+.change-color-span{
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.publish-new-card{
+    position: absolute;
+    cursor: pointer;
+    bottom: 5px;
+    left:40%;
+}
+
+
+.user-img{
+    position: relative;
+    top: -3px;
+    left: 0;
+    border-radius: 70px;
+}
+
+.card-text{
+    word-break: break-all;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+}

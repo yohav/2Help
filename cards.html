@@ -1,0 +1,17 @@
+<ion-header-bar class="bar bar-dark">
+    <button class="button button-clear" ng-click="goSettings()"><i class="icon header-icon ion-person cards-header-btn"></i></button>
+    <h1 class="title title-2help"><img src="title.png"/></h1>
+    <button class="button button-clear" ng-click="goChat()"><i class="icon header-icon ion-chatbubbles cards-header-btn"></i></button>
+</ion-header-bar>
+<ion-pane>
+    <td-cards>
+        <td-card ng-repeat="card in cards" on-destroy="cardDestroyed()" on-card-swipe-left="cardSwipedLeft()" on-card-swipe-right="cardSwipedRight()" on-partial-swipe="onPartialSwipe(amt)" ng-style="{'background-color':card.background_color, 'color':card.color}">
+
+            <img class="user-img" ng-src="{{card.user_img}}"/>
+            <p>Need your help in</p>
+            <p class="card-text" ng-bind="card.text"></p>
+            <div class="no-text" ng-style="card.rightTextOpacity"><i class="icon header-icon ion-close-round"></i></div>
+            <div class="yes-text" ng-style="card.leftTextOpacity"><i class="icon header-icon ion-checkmark-round"></i></div>
+        </td-card>
+    </td-cards>
+</ion-pane>
