@@ -3,7 +3,7 @@
     <h1 class="title title-2help"><img src="img/title.png"/></h1>
     <button class="button button-clear" ng-click="goChat()"><i class="icon header-icon ion-chatbubbles cards-header-btn"></i></button>
 </ion-header-bar>
-<ion-pane>
+<ion-pane  class='content'>
     <td-cards>
         <td-card ng-repeat="card in cards" on-destroy="cardDestroyed()" on-card-swipe-left="cardSwipedLeft()" on-card-swipe-right="cardSwipedRight()" on-partial-swipe="onPartialSwipe(amt)" ng-style="{'background-color':card.background_color, 'color':card.color}">
 
