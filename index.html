@@ -1,8 +1,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width,  minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="mobile-web-app-capable" content="yes">
 
     <link rel="stylesheet" href="lib/css/ionic.css">
     <link rel="stylesheet" href="css/ionic.tcards.css">
@@ -40,14 +42,14 @@
     <script src="js/services/usersService.js"></script>
 
     <script src="js/utils/collide.js"></script>
+    <script src="js/utils/bouncefix.js"></script>
 
 
 
 </head>
 
 <body ng-app="tohelp">
-
-<ion-nav-view animation="slide-left-right-ios7"></ion-nav-view>
-
+    <ion-nav-view animation="slide-left-right-ios7"></ion-nav-view>
 </body>
+<script>bouncefix.add('content')</script>
 </html>
