@@ -4,10 +4,8 @@ tohelp.directive('chooseCategory', function($document) {
         restrict: 'E',
         link: function($scope, $element, $attr) {
         	$scope.currentCategories = $scope.categories
-        	previousCategories = []
-        	chosen = []
-
-
+        	previousCategories = [];
+        	chosen = [];
         	$scope.categoryClick = function(index) {
         		if($scope.currentCategories[index].subs.length) {
         			previousCategories.push($scope.currentCategories);

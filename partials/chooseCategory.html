@@ -1,5 +1,5 @@
 <div ng-click="back()"> back </div>
 
-<div class="tile" ng-class="{chosen: isChosen(category.title)}" ng-repeat="category in currentCategories" ng-click="categoryClick($index)" ng-dblclick="chooseCategory($index)">
+<div class="tile" ng-class="{chosen: isChosen(category.title)}" ng-repeat="category in currentCategories" ng-click="categoryClick($index)">
 	{{category.title}} 
  </div>

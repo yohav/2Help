@@ -9,6 +9,12 @@ tohelp.config(function($stateProvider, $urlRouterProvider) {
             url: '/createProfile',
             templateUrl: 'partials/createProfile.html',
             controller: 'createProfileCtrl'
+        })
+        .state('login', {
+            url: '/login',
+            templateUrl: 'partials/login.html',
+            controller: 'LoginCtrl',
+            module: 'public'
         });
     $urlRouterProvider.otherwise("/main");
 });

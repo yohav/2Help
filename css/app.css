@@ -145,3 +145,34 @@ ion-header-bar{
 .tile.chosen {
     background-color: green;
 }
+
+.tile {
+    width: 80px;
+    height: 80px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: impact;
+    color: #333;
+    text-decoration: none;
+    line-height: 100%;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin: 0 2px 5px 0;
+    
+    /* default button color */
+    background-color: #ececec;
+    border: solid 1px #b8b8b9;
+    
+    /* default box shadow */
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 1px 0 rgba(0,0,0,.1);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 1px 0 rgba(0,0,0,.1);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 1px 0 rgba(0,0,0,.1);
+
+    /* default border radius */
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    
+}
