@@ -1,9 +1,15 @@
+ion-header-bar{
+    background-color: #A61818 !important;
+}
+
 .title{
-    color: #2e8b57 !important;
+    color: black !important;
 }
+
 .title-2help{
-    top: -2px !important;
+    margin: 7px !important;
 }
+
 .yes-text {
     position: absolute;
     top: 15px;
@@ -36,13 +42,13 @@
 }
 
 .help-settings-card{
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     margin:30px auto;
 }
 .help-settings-card .container{
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
     text-align: center;
     vertical-align: middle;
     display: table-cell;
@@ -56,8 +62,8 @@
     text-align: center;
     vertical-align: middle;
     display: table-cell;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
 
 .help-text{
