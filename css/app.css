@@ -132,3 +132,16 @@ ion-header-bar{
     padding-right: 10px;
     font-size: 15px;
 }
+
+
+.tile {
+    width:80px;
+    height: 80px;
+    background-color: grey;
+    float: left;
+    margin: 10px;
+}
+
+.tile.chosen {
+    background-color: green;
+}
