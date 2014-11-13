@@ -2,7 +2,7 @@ tohelp.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('main', {
             url: '/main',
-            templateUrl: 'main.html',
+            templateUrl: 'partials/main.html',
             controller: 'MainCtrl'
         });
     $urlRouterProvider.otherwise("/main");
