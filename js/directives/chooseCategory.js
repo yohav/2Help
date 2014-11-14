@@ -15,6 +15,12 @@ tohelp.directive('chooseCategory', function($document, $http,usersService,$state
 
             $scope.previousBusiness = [];
             $scope.chosen = [];
+
+            // Fill chosen skills
+            if (localStorage.getItem('WantedSkillsObjects')) {
+                $scope.chosen = JSON.parse(localStorage.getItem('WantedSkillsObjects'));
+            }
+
         	$scope.businessClick = function(index) {
         		if($scope.currentBusiness[index].Children.length) {
                     $scope.previousBusiness.push($scope.currentBusiness);
@@ -42,11 +48,15 @@ tohelp.directive('chooseCategory', function($document, $http,usersService,$state
         	};
 
         	$scope.isChosen = function(skill) {
-        		if ($scope.chosen.indexOf(skill) == -1) {
-        			return false;
-        		}
+                isChosen = false;
 
-        		return true;
+                angular.forEach($scope.chosen, function(a) {
+                    if (a.ID == skill.ID) {
+                        isChosen = true;
+                    }
+                });
+
+        		return isChosen;
         	};
 
         	$scope.back = function() {
@@ -60,6 +70,7 @@ tohelp.directive('chooseCategory', function($document, $http,usersService,$state
                    return skill.ID;
                 });
                 if($scope.mySkills == "true") {
+                    localStorage.setItem('WantedSkillsObjects',JSON.stringify($scope.chosen));
                     usersService.SaveSkills(skillIds).success(function () {
                         $state.go('main');
                     });
