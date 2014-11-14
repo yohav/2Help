@@ -1,36 +1,41 @@
-tohelp.directive('chooseCategory', function($document, $http) {
+tohelp.directive('chooseCategory', function($document, $http,usersService,$state) {
 
     return {
         restrict: 'E',
+        scope:{
+          mySkills: '@'
+        },
         link: function($scope, $element, $attr) {
+
+            $scope.title= $scope.mySkills=="true" ? "Choose Your Skills" : "Choose Wanted Skills";
 
             $http.get('http://timebank.azurewebsites.net/api/businesses').success(function(data) {
                 $scope.currentBusiness = data;
             });
 
-        	previousBusiness = [];
-        	chosen = [];
+            $scope.previousBusiness = [];
+            $scope.chosen = [];
         	$scope.businessClick = function(index) {
         		if($scope.currentBusiness[index].Children.length) {
-        			previousBusiness.push($scope.currentBusiness);
+                    $scope.previousBusiness.push($scope.currentBusiness);
         			$scope.currentBusiness = $scope.currentBusiness[index].Children;
         		} else {
         			$scope.chooseBusiness(index);
         		}
-        	}
+        	};
 
         	$scope.chooseBusiness = function(index){
-        		var title = $scope.currentBusiness[index].Name;
+        		var skill = $scope.currentBusiness[index];
 
-        		if ($scope.isChosen(title)) {
-        			chosen.splice(chosen.indexOf(title));
+        		if ($scope.isChosen(skill)) {
+                    $scope.chosen.splice($scope.chosen.indexOf(skill),1);
         		} else {
-        			chosen.push(title);	
+                    $scope.chosen.push(skill);
         		}	
-        	}
+        	};
 
-        	$scope.isChosen = function(title) {
-        		if (chosen.indexOf(title) == -1) {
+        	$scope.isChosen = function(skill) {
+        		if ($scope.chosen.indexOf(skill) == -1) {
         			return false;
         		}
 
@@ -38,12 +43,28 @@ tohelp.directive('chooseCategory', function($document, $http) {
         	};
 
         	$scope.back = function() {
-        		if (previousBusiness.length) {
-        			$scope.currentBusiness = previousBusiness.pop();
+        		if ($scope.previousBusiness.length) {
+        			$scope.currentBusiness = $scope.previousBusiness.pop();
         		}
-        	}
+        	};
+
+            $scope.saveSkills = function(){
+                var skillIds = $scope.chosen.map(function(skill){
+                   return skill.ID;
+                });
+                if($scope.mySkills == "true") {
+                    usersService.SaveSkills(skillIds).success(function () {
+                        $state.go('main');
+                    });
+                }
+                else{
+                    localStorage.setItem('WantedSkills',skillIds);
+                    $state.go('main');
+                }
+            };
+
         },
         templateUrl: 'partials/chooseCategory.html'
 
     }
-})
+});

@@ -1,8 +1,19 @@
 <ion-header-bar class="bar-dark">
+    <button class="button button-clear" ng-click="updateSkills()">Update Skills</button>
     <h1 class="title"><i class="icon header-icon ion-person"></i></h1>
     <button class="button button-clear cards-header-btn" ng-click="goApp()"><img src="img/title-nav.png"/></button>
 </ion-header-bar>
-<ion-content scrollbar-y="false">
-    <p ng-bind="name"></p>
-    <img ng-src="{{image}}">
+<ion-content>
+    <div class="box">
+        <p ng-bind="name"></p>
+    </div>
+    <img class="profile-pic" ng-src="{{image}}">
+
+    <div class="box">
+    <p>Your Amount : <span ng-bind="amount"></span></p>
+    <p>Rank As Customer: <span ng-bind="RankAsCustomer"></span></p>
+    <p>Rank As Supplier: <span ng-bind="RankAsSpplier"></span></p>
+    </div>
+    <button class="button button-outline button-balanced trade-time" ng-click="chooseWanted()">Time Trading</button>
+
 </ion-content>

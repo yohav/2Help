@@ -1,13 +1,14 @@
-<style>
-body {
-	background: url(http://subtlepatterns.com/patterns/scribble_light.png) ;
-}
-</style>
-<div id="wrapper">
-	<div id="columns">
-<div ng-click="back()"> back </div>
-	<div style="background-image: url('img/{{business.Name}}.jpg');" class="tile" ng-class="{chosen: isChosen(business.Name)}" ng-repeat="business in currentBusiness" ng-click="		businessClick($index)">
-		<span style="bottom:-27;position:absolute;margin-left:20px;">{{business.Name}}</span> 
- 	</div>
-	</div>
-</div>
+<ion-header-bar class="bar-dark">
+    <button class="button button-clear" ng-click="back()" ng-show="previousBusiness.length > 0">Back</button>
+    <h1 class="title" ng-bind="title"></h1>
+    <button class="button button-clear" ng-click="saveSkills()" ng-show="chosen.length > 0">Save</button>
+</ion-header-bar>
+<ion-content class="category-content">
+    <div id="wrapper">
+        <div id="columns">
+        <div style="background-image: url('img/{{business.Name}}.jpg');" class="tile" ng-class="{chosen: isChosen(business)}" ng-repeat="business in currentBusiness" ng-click="		businessClick($index)">
+            <span style="bottom:-27;position:absolute;margin-left:20px;">{{business.Name}}</span>
+        </div>
+        </div>
+    </div>
+</ion-content>

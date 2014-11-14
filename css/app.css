@@ -1,12 +1,13 @@
 ion-header-bar{
-    background-color: #A61818 !important;
+    background-color: #9356a6  !important;
 }
 
-.title{
+.title {
     color: black !important;
+}
 
-.title-2help{
-    margin: 7px !important;
+.title-2help > img{
+    height: 42px;
 }
 
 .yes-text {
@@ -93,6 +94,11 @@ ion-header-bar{
     margin: 0 !important;
     color: #ccc !important;
 }
+
+.cards-header-btn > img{
+    height: 32px;
+}
+
 .cards-header-btn:before{
     font-size: 30px !important;
 }
@@ -140,7 +146,7 @@ ion-header-bar{
     float: left;
     margin: 10px;
 }
-}
+
 
 .tile.chosen {
     opacity: 0.4;
@@ -172,7 +178,7 @@ ion-header-bar{
     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
     }
     
-}
+
 
 .login-btn{
     width: 300px;
@@ -222,4 +228,40 @@ ion-header-bar{
     height: 100%;
     display: table-cell;
     vertical-align: middle;
+}
+.category-content{
+    background: url(http://subtlepatterns.com/patterns/scribble_light.png) ;
+}
+
+#wrapper{
+    margin: 40px;
+}
+
+.box{
+    width: 80%;
+    border: solid 2px;
+    text-align: center;
+    box-shadow: 0px 11px 13px 0px rgba(50, 50, 50, 0.75);
+    border-radius: 10px;
+    border-color: #444;
+    margin: 15px auto;
+    display: block;
+}
+
+.profile-pic{
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+}
+
+.trade-time{
+    margin: 0 auto;
+    display: block;
+    border-radius: 4px;
+    background-color: #9356a6 !important;
+    color: white !important;
+}
+
+.trade-time:active{
+    color: #c3c3c3 !important;
 }

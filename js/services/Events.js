@@ -12,9 +12,14 @@ tohelp.factory('Events',function(){
     var getMyEvents = function(buyerID){
     };
 
+    var getNearByEvents = function(){
+
+    };
+
     return {
         AddEvent: addEvent,
         RemoveEvent: removeEvent,
-        GetMyEvents: getMyEvents
+        GetMyEvents: getMyEvents,
+        GetNearByEvents: getNearByEvents
     }
 });

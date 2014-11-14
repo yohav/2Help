@@ -1,6 +1,6 @@
 tohelp.controller('CardsCtrl', function($scope, Events,$ionicSlideBoxDelegate) {
 
-    $scope.cards = Events.GetMyEvents();
+    $scope.cards = Events.GetNearByEvents();
 
     //$scope.cards = Array.prototype.slice.call(cardTypes, 0);
 
