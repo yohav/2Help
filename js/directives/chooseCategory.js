@@ -17,7 +17,7 @@ tohelp.directive('chooseCategory', function($document, $http,usersService,$state
             $scope.chosen = [];
 
             // Fill chosen skills
-            if (localStorage.getItem('WantedSkillsObjects')) {
+            if (localStorage.getItem('WantedSkillsObjects') && $scope.mySkills=="true") {
                 $scope.chosen = JSON.parse(localStorage.getItem('WantedSkillsObjects'));
             }
 
