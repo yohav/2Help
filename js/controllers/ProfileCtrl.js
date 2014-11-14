@@ -3,6 +3,8 @@ tohelp.controller('ProfileCtrl', function($scope,$ionicSlideBoxDelegate,FBServic
         $ionicSlideBoxDelegate.next();
     };
 
+    $scope.id = localStorage.getItem('fbID');
+
     FBService.GetInfo().then(function(user){
         $scope.user = user;
         $scope.name = $scope.user.first_name + " " + $scope.user.last_name;

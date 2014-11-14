@@ -5,7 +5,7 @@
 </ion-header-bar>
 <ion-content>
     <div class="box" id="username">
-        <p ng-bind="name"></p>
+        <a ng-bind="name" ng-href="https://www.facebook.com/{{id}}" class="url-link"></a>
     </div>
     <img class="profile-pic" ng-src="{{image}}">
 
@@ -24,6 +24,9 @@
     </div>
     </span>
     </p>
+    <p><span ng-bind="amount"></span> Hours</p>
+    <p>Rank As Customer: <span ng-bind="RankAsCustomer"></span></p>
+    <p>Rank As Supplier: <span ng-bind="RankAsSpplier"></span></p>
     </div>
 
     <div class="bottom-bar">

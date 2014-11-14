@@ -128,7 +128,7 @@ ion-header-bar{
     position: relative;
     top: -3px;
     left: 0;
-    border-radius: 70px;
+    border-radius: 125px;
 }
 
 .card-text{
@@ -238,7 +238,7 @@ ion-header-bar{
 }
 
 .box{
-    width: 60%;
+    width: 85%;
     border: solid 1px;
     text-align: center;
     box-shadow: 0px 11px 13px 0px rgba(50, 50, 50, 0.75);
@@ -274,12 +274,25 @@ ion-header-bar{
 }
 
 .bottom-bar{
-    width: 265px;
+    width: 250px;
     margin: 0 auto;
 }
 
 .bottom-bar > button{
     display: inline-block;
+    font-size: 13px;
+}
+
+.distance{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+.rank{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
     float: left;
 }
 
@@ -309,3 +322,8 @@ ion-header-bar{
    position: absolute;
    color: gold;
 }
+.url-link{
+    text-decoration: none;
+    color: black;
+}
+

@@ -3,5 +3,5 @@ tohelp.controller('MainCtrl', function($scope) {
     $scope.slideHasChanged = function(index){
        $scope.currntSlide = index;
         $scope.$broadcast('slideChanged');
-    }
+    };
 });

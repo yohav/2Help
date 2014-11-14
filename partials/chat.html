@@ -3,11 +3,13 @@
     <h1 class="title"><i class="icon header-icon ion-chatbubbles"></i></h1>
 </ion-header-bar>
 <ion-content scrollbar-y="false">
-    <div class="padding">
-        <div class="card">
-            <div class="item item-text-wrap">
-                This is a basic Card which contains an item that has wrapping text.
-            </div>
-        </div>
-    </div>
+<ul class="list">
+
+    	<a class="item item-thumbnail-left" href="#" ng-repeat="event in events" ng-click="agree(event.BusinessID)">
+        <img ng-src="{{event.image}}">
+        <h2>EVENT</h2>
+        <p>{{event.businessname}}</p>
+    	</a>
+
+</ul>
 </ion-content>

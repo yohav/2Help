@@ -9,8 +9,9 @@ tohelp.factory('usersService',function($http,$q){
         });
     };
 
-    var get = function(){
-        return $http.get('http://timebank.azurewebsites.net/api/users/'+fbID);
+    var get = function(id){
+        var id = id || fbID;
+        return $http.get('http://timebank.azurewebsites.net/api/users/'+id);
     };
 
     var saveSkills = function(skills){

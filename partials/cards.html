@@ -3,15 +3,14 @@
     <h1 class="title title-2help"><img src="img/logo.png"/></h1>
     <button class="button button-clear" ng-click="goChat()"><i class="icon header-icon ion-chatbubbles cards-header-btn"></i></button>
 </ion-header-bar>
-<ion-pane  class='content'>
+<ion-pane class='content'>
     <td-cards>
-        <td-card ng-repeat="card in cards | orderBy: distance" on-destroy="cardDestroyed()" on-card-swipe-left="cardSwipedLeft()" on-card-swipe-right="cardSwipedRight()" on-partial-swipe="onPartialSwipe(amt)" ng-style="{'background-color':card.background_color, 'color':card.color}">
-
-            <img class="user-img" ng-src="https://graph.facebook.com/{{card.FacebookID}}/picture?width=100&height=100"/>
+        <td-card ng-repeat="card in cards" on-destroy="cardDestroyed()" on-card-swipe-left="cardSwipedLeft()" on-card-swipe-right="cardSwipedRight()" on-partial-swipe="onPartialSwipe(amt)">
+            <img class="user-img" ng-src="https://graph.facebook.com/{{card.FacebookID}}/picture?width=200&height=200"/>
             <div class="no-text" ng-style="card.rightTextOpacity"><i class="icon header-icon ion-close-round"></i></div>
             <div class="yes-text" ng-style="card.leftTextOpacity"><i class="icon header-icon ion-checkmark-round"></i></div>
-            <span ng-bind="card.distance"></span>
-            <span ng-bind="getRankOfSupplier(card.FacebookID)"></span>
+            <span ng-bind="card.distance+'KM'" class="distance"></span>
+            <span ng-bind="'Rank : '+ card.rank" class="rank"></span>
         </td-card>
     </td-cards>
 </ion-pane>
