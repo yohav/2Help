@@ -12,8 +12,18 @@
     <div class="box">
     <img src="img/logo_face.png" style="float:left">
     <p>Your Amount : <span ng-bind="amount"></span></p>
-    <p>Rank As Customer: <span ng-bind="RankAsCustomer"></span></p>
-    <p>Rank As Supplier: <span ng-bind="RankAsSpplier"></span></p>
+    <p>Rank As Customer: <span ng-bind="RankAsCustomer">    
+    <div class="rating">
+        <span >☆</span><span >☆</span><span class="stars">☆</span><span class="stars">☆</span><span class="stars">☆</span>
+    </div>
+    </span>
+    </p>
+    <p>Rank As Supplier: <span ng-bind="RankAsSpplier">   
+    <div class="rating">
+        <span >☆</span><span >☆</span><span class="stars">☆</span><span class="stars">☆</span><span class="stars">☆</span>
+    </div>
+    </span>
+    </p>
     </div>
 
     <div class="bottom-bar">
