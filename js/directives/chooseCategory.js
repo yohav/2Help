@@ -1,22 +1,26 @@
-tohelp.directive('chooseCategory', function($document) {
+tohelp.directive('chooseCategory', function($document, $http) {
 
     return {
         restrict: 'E',
         link: function($scope, $element, $attr) {
-        	$scope.currentCategories = $scope.categories
-        	previousCategories = [];
+
+            $http.get('http://timebank.azurewebsites.net/api/businesses').success(function(data) {
+                $scope.currentBusiness = data;
+            });
+
+        	previousBusiness = [];
         	chosen = [];
-        	$scope.categoryClick = function(index) {
-        		if($scope.currentCategories[index].subs.length) {
-        			previousCategories.push($scope.currentCategories);
-        			$scope.currentCategories = $scope.currentCategories[index].subs;
+        	$scope.businessClick = function(index) {
+        		if($scope.currentBusiness[index].Children.length) {
+        			previousBusiness.push($scope.currentBusiness);
+        			$scope.currentBusiness = $scope.currentBusiness[index].Children;
         		} else {
-        			$scope.chooseCategory(index);
+        			$scope.chooseBusiness(index);
         		}
         	}
 
-        	$scope.chooseCategory = function(index){
-        		var title = $scope.currentCategories[index].title;
+        	$scope.chooseBusiness = function(index){
+        		var title = $scope.currentBusiness[index].Name;
 
         		if ($scope.isChosen(title)) {
         			chosen.splice(chosen.indexOf(title));
@@ -34,14 +38,11 @@ tohelp.directive('chooseCategory', function($document) {
         	};
 
         	$scope.back = function() {
-        		if (previousCategories.length) {
-        			$scope.currentCategories = previousCategories.pop();
+        		if (previousBusiness.length) {
+        			$scope.currentBusiness = previousBusiness.pop();
         		}
         	}
         },
-        scope: {
-        	categories: '='
-      	},
         templateUrl: 'partials/chooseCategory.html'
 
     }
