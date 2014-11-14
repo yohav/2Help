@@ -30,7 +30,14 @@ tohelp.directive('chooseCategory', function($document, $http,usersService,$state
         		if ($scope.isChosen(skill)) {
                     $scope.chosen.splice($scope.chosen.indexOf(skill),1);
         		} else {
+
+                    if ($scope.mySkills=="false") {
+                        $scope.chosen.pop()
+                    }
+
                     $scope.chosen.push(skill);
+
+
         		}	
         	};
 
