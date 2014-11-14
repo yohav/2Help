@@ -128,7 +128,7 @@ ion-header-bar{
     position: relative;
     top: -3px;
     left: 0;
-    border-radius: 70px;
+    border-radius: 125px;
 }
 
 .card-text{
@@ -267,10 +267,23 @@ ion-header-bar{
 }
 
 .bottom-bar{
-    width: 265px;
+    width: 250px;
     margin: 0 auto;
 }
 
 .bottom-bar > button{
     display: inline-block;
+    font-size: 13px;
+}
+
+.distance{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+.rank{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
 }

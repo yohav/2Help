@@ -19,16 +19,21 @@ tohelp.factory('Events',function(usersService,$http,$q){
             var user_latitude = user_location.latitude;
             var user_longitude = user_location.longitude;
             suppliers.data.forEach(function(supplier){
-                var supplier_location = JSON.parse(supplier.UserLocation);
-                if(supplier.UserLocation != "{}") {
-                    var supplier_latitude = supplier_location.latitude;
-                    var supplier_longitude = supplier_location.longitude;
+                if(supplier.FacebookID != localStorage.getItem('fbID')) {
+                    var supplier_location = JSON.parse(supplier.UserLocation);
+                    if (supplier.UserLocation != "{}") {
+                        var supplier_latitude = supplier_location.latitude;
+                        var supplier_longitude = supplier_location.longitude;
+                    }
+                    else {
+                        supplier_latitude = 0;
+                        supplier_longitude = 0;
+                    }
+                    supplier.distance = locationDistance(user_latitude, user_longitude, supplier_latitude, supplier_longitude) | 0;
                 }
-                else{
-                    supplier_latitude = 0;
-                    supplier_longitude = 0;
+                else {
+                    supplier.distance = -1;
                 }
-                suppliers.distance = locationDistance(user_latitude,user_longitude,supplier_latitude,supplier_longitude)
             });
             defferd.resolve(suppliers);
         });
