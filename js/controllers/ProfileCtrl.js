@@ -44,4 +44,8 @@ tohelp.controller('ProfileCtrl', function($scope,$ionicSlideBoxDelegate,FBServic
         return localStorage.getItem('coords') != null;
     }
 
+    $scope.updateSkills = function() {
+        $state.go('createProfile')
+    }
+
 });
