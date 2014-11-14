@@ -295,3 +295,8 @@ ion-header-bar{
     right: 15px;
     float: left;
 }
+
+.url-link{
+    text-decoration: none;
+    color: black;
+}
