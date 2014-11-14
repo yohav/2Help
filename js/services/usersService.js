@@ -1,50 +1,19 @@
-tohelp.factory('usersService',function($q){
+tohelp.factory('usersService',function($http,$q){
+    var fbID = localStorage.getItem('fbID');
 
-    var statusChangeCallback = function(response){
-        var deferred = $q.defer();
-        if (response.status === 'connected') {
-            deferred.resolve({token: response.authResponse.accessToken});
-        } else if (response.status === 'not_authorized') {
-            deferred.resolve({token: null});
-        } else {
-            deferred.resolve({token: null});
+    var save = function(){
+        var userExists = get();
+        if(!userExists) {
+            $http.post('http://timebank.azurewebsites.net/api/users', fbID);
         }
-        return deferred.promise;
     };
 
-    var login = function(){
-        var deferred = $q.defer();
-        FB.login(function(response) {
-            deferred.resolve(statusChangeCallback(response));
-        });
-        return deferred.promise;
-    };
-
-    var logout = function(){
-        FB.logout();
-    };
-
-    var getLoginStatus = function(){
-        var deferred = $q.defer();
-        FB.getLoginStatus(function(response) {
-            deferred.resolve(statusChangeCallback(response));
-        });
-        return deferred.promise;
-    };
-
-    var getInfo = function(){
-        var deferred = $q.defer();
-        FB.api('/me', function(response) {
-            deferred.resolve(response);
-        });
-        return deferred.promise;
+    var get = function(){
+        return $http.get('http://timebank.azurewebsites.net/api/users/'+fbID);
     };
 
     return {
-        Login: login,
-        Logout: logout,
-        GetLoginStatus: getLoginStatus,
-        GetInfo: getInfo
-
+        Save: save,
+        Get: get
     }
 });

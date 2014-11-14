@@ -1,8 +1,8 @@
-tohelp.controller('CardsCtrl', function($scope, MyHelps,$ionicSlideBoxDelegate) {
+tohelp.controller('CardsCtrl', function($scope, Events,$ionicSlideBoxDelegate) {
 
-    var cardTypes = MyHelps.GetHelps();
+    $scope.cards = Events.GetMyEvents();
 
-    $scope.cards = Array.prototype.slice.call(cardTypes, 0);
+    //$scope.cards = Array.prototype.slice.call(cardTypes, 0);
 
     $scope.cardDestroyed = function() {
         console.log('destroyed');

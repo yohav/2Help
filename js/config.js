@@ -3,12 +3,14 @@ tohelp.config(function($stateProvider, $urlRouterProvider) {
         .state('main', {
             url: '/main',
             templateUrl: 'partials/main.html',
-            controller: 'MainCtrl'
+            controller: 'MainCtrl',
+            module: 'private'
         })
        .state('createProfile', {
             url: '/createProfile',
             templateUrl: 'partials/createProfile.html',
-            controller: 'createProfileCtrl'
+            controller: 'createProfileCtrl',
+            module: 'public'
         })
         .state('login', {
             url: '/login',

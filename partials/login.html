@@ -1,3 +1,49 @@
-<ion-content scrollbar-y="false">
-    <img src="img/FBloginbutton.png" ng-click="login()"/>
-</ion-content>
+<ion-slide-box>
+    <ion-slide>
+        <img src="img/intro/1.jpg" ng-style="style"/>
+        <p class="intro-txt">Use Your Time Wisely</p>
+    </ion-slide>
+    <ion-slide>
+        <img src="img/intro/2.jpg" ng-style="style"/>
+        <p class="intro-txt">Your Time Is Important Than You Think </p>
+    </ion-slide>
+    <ion-slide>
+        <img src="img/intro/3.jpg" ng-style="style"/>
+        <p class="intro-txt">The Trouble Is You Think You Have Time </p>
+    </ion-slide>
+    <ion-slide>
+        <img src="img/intro/4.jpg" ng-style="style"/>
+        <p class="the-team">The Team </p>
+        <div id="team">
+            <div class="pep_div" style="top:8%; left:5%;">
+                <p>Alex Jilkin</p>
+                <img class="img_cir" src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/1097962_10201697889990443_1580706279_n.jpg?oh=a1583e8ea351794bb0b6aa02de49a60a&amp;oe=55195C5D&amp;__gda__=1424126855_2d3ece380bac703f0dbe65d58b13f0b9">
+            </div>
+
+            <div class="pep_div" style="bottom:8%; left:5%;">
+                <p>Sasiel Saadon</p>
+                <img class="img_cir" src="https://scontent-b-vie.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/181925_1851016755784_1448425_n.jpg?oh=58421be5e836682eb19a6bba6532d1b4&amp;oe=551C36F2">
+            </div>
+
+            <div class="pep_div" style="top:8%; right:5%;">
+                <p>Yael Hermon</p>
+                <img class="img_cir" src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/392994_2412827234493_1150532764_n.jpg?oh=626b62f0cc1991db317850d1348531e2&amp;oe=54D202E3&amp;__gda__=1424802602_cc9402ade17035f8ca3ac680503a08df">
+            </div>
+
+            <div class="pep_div" style="bottom:8%; right:5%;">
+                <p>Yoav Melman</p>
+                <img class="img_cir" src="https://scontent-a-vie.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10257602_10204086219820896_3915768308947369343_o.jpg">
+            </div>
+
+            <div class="pep_div" style="top:33%; left:33%;">
+                <p>Omer Cohen</p>
+                <img class="img_cir" src="https://scontent-a-vie.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/1170775_10153190360065451_817268638_n.jpg?oh=fb0210ba85155a6263ce45509f302e10&amp;oe=551ACB49">
+            </div>
+        </div>
+    </ion-slide>
+    <ion-slide>
+        <div class="wrapper" ng-style="{'height': height}">
+            <img class="tracebook-login" src="img/FBloginbutton.png" ng-click="login()" ng-style="{'width': width}">
+        </div>
+    </ion-slide>
+</ion-slide-box>

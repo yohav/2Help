@@ -176,3 +176,53 @@ ion-header-bar{
     border-radius: 5px;
     
 }
+
+.login-btn{
+    width: 300px;
+}
+
+.intro-txt{
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.img_cir{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border: solid 1px;
+}
+
+.pep_div{
+    position: absolute;
+}
+
+.the-team{
+    position: absolute;
+    top: 3%;
+    color: white;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.pep_div > p{
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.tracebook-login{
+    width: 300px;
+}
+
+.wrapper{
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
