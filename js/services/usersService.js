@@ -17,9 +17,14 @@ tohelp.factory('usersService',function($http,$q){
         return $http.post('http://timebank.azurewebsites.net/api/users/'+fbID,skills);
     };
 
+    var saveLocation = function(coords){
+        return $http.post('http://timebank.azurewebsites.net/api/users/'+fbID,coords);
+    };
+
     return {
         Save: save,
         Get: get,
-        SaveSkills: saveSkills
+        SaveSkills: saveSkills,
+        SaveLocation: saveLocation
     }
 });

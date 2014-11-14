@@ -1,4 +1,4 @@
-tohelp.directive('chooseCategory', function($document, $http,usersService,$state) {
+tohelp.directive('chooseCategory', function($document, $http,usersService,$state,$rootScope) {
 
     return {
         restrict: 'E',
@@ -58,8 +58,9 @@ tohelp.directive('chooseCategory', function($document, $http,usersService,$state
                     });
                 }
                 else{
-                    localStorage.setItem('WantedSkills',skillIds);
+                    localStorage.setItem('WantedSkills',JSON.stringify(skillIds));
                     $state.go('main');
+                    $rootScope.$broadcast('wantedSkillsChoosed');
                 }
             };
 

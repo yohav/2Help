@@ -5,13 +5,13 @@
 </ion-header-bar>
 <ion-pane  class='content'>
     <td-cards>
-        <td-card ng-repeat="card in cards" on-destroy="cardDestroyed()" on-card-swipe-left="cardSwipedLeft()" on-card-swipe-right="cardSwipedRight()" on-partial-swipe="onPartialSwipe(amt)" ng-style="{'background-color':card.background_color, 'color':card.color}">
+        <td-card ng-repeat="card in cards | orderBy: distance" on-destroy="cardDestroyed()" on-card-swipe-left="cardSwipedLeft()" on-card-swipe-right="cardSwipedRight()" on-partial-swipe="onPartialSwipe(amt)" ng-style="{'background-color':card.background_color, 'color':card.color}">
 
-            <img class="user-img" ng-src="{{card.user_img}}"/>
-            <p>{{card.username}} need your help in</p>
-            <p class="card-text" ng-bind="card.text"></p>
+            <img class="user-img" ng-src="https://graph.facebook.com/{{card.FacebookID}}/picture?width=100&height=100"/>
             <div class="no-text" ng-style="card.rightTextOpacity"><i class="icon header-icon ion-close-round"></i></div>
             <div class="yes-text" ng-style="card.leftTextOpacity"><i class="icon header-icon ion-checkmark-round"></i></div>
+            <span ng-bind="card.distance"></span>
+            <span ng-bind="getRankOfSupplier(card.FacebookID)"></span>
         </td-card>
     </td-cards>
 </ion-pane>

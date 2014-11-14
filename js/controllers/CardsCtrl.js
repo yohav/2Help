@@ -1,8 +1,11 @@
-tohelp.controller('CardsCtrl', function($scope, Events,$ionicSlideBoxDelegate) {
+tohelp.controller('CardsCtrl', function($scope, Events,$ionicSlideBoxDelegate,$rootScope) {
 
-    $scope.cards = Events.GetNearByEvents();
-
-    //$scope.cards = Array.prototype.slice.call(cardTypes, 0);
+    $rootScope.$on('wantedSkillsChoosed',function(){
+        var wantedSkills = JSON.parse(localStorage.getItem('WantedSkills'))[0];
+        Events.GetNearByEvents(wantedSkills).then(function(data){
+            $rootScope.cards = data.data;
+        });
+    });
 
     $scope.cardDestroyed = function() {
         console.log('destroyed');
@@ -19,6 +22,10 @@ tohelp.controller('CardsCtrl', function($scope, Events,$ionicSlideBoxDelegate) {
         $scope.cards[0].leftTextOpacity = {'opacity': amt > 0 ? amt+0.3 : 0 };
         $scope.cards[0].rightTextOpacity = { 'opacity': amt < 0 ? Math.abs(amt)+0.3 : 0};
     };
+
+    $scope.getRankOfSupplier = function(id){
+        
+    }
 
     $scope.goSettings = function(){
         $ionicSlideBoxDelegate.previous();

@@ -265,3 +265,12 @@ ion-header-bar{
 .trade-time:active{
     color: #c3c3c3 !important;
 }
+
+.bottom-bar{
+    width: 265px;
+    margin: 0 auto;
+}
+
+.bottom-bar > button{
+    display: inline-block;
+}

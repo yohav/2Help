@@ -1,4 +1,4 @@
-tohelp.controller('ProfileCtrl', function($scope,$ionicSlideBoxDelegate,FBService,usersService,$state) {
+tohelp.controller('ProfileCtrl', function($scope,$ionicSlideBoxDelegate,FBService,usersService,$state,$ionicPopup) {
     $scope.goApp = function(){
         $ionicSlideBoxDelegate.next();
     };
@@ -16,7 +16,32 @@ tohelp.controller('ProfileCtrl', function($scope,$ionicSlideBoxDelegate,FBServic
     });
 
     $scope.chooseWanted = function(){
-        $state.go('wantedSkills');
+        if($scope.isCoordsSet()) {
+            $state.go('wantedSkills');
+        }
+        else
+        {
+            $ionicPopup.alert({
+                title: 'Location Error',
+                template: 'You should set your location before proceeding'
+            });
+        }
+    };
+
+    $scope.setMyLocation = function(){
+        navigator.geolocation.getCurrentPosition(function (pos) {
+            var coords = pos.coords;
+            $scope.$apply(localStorage.setItem('coords', JSON.stringify(coords)));
+            usersService.SaveLocation(JSON.stringify(coords));
+            $ionicPopup.alert({
+                title: 'Location Saved',
+                template: 'Location saved successfully'
+            });
+        });
+    };
+
+    $scope.isCoordsSet = function(){
+        return localStorage.getItem('coords') != null;
     }
 
 });

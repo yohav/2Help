@@ -4,6 +4,7 @@ tohelp.factory('FBService',function($q){
         var deferred = $q.defer();
         if (response.status === 'connected') {
             deferred.resolve({token: response.authResponse.accessToken});
+            localStorage.setItem("fbToken", response.authResponse.accessToken);
         } else if (response.status === 'not_authorized') {
             deferred.resolve({token: null});
         } else {
