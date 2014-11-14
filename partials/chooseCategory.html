@@ -1,4 +1,13 @@
+<style>
+body {
+	background: url(http://subtlepatterns.com/patterns/scribble_light.png) ;
+}
+</style>
+<div id="wrapper">
+	<div id="columns">
 <div ng-click="back()"> back </div>
-<div class="tile" ng-class="{chosen: isChosen(business.Name)}" ng-repeat="business in currentBusiness" ng-click="businessClick($index)">
-	{{business.Name}} 
- </div>
+	<div style="background-image: url('img/{{business.Name}}.jpg');" class="tile" ng-class="{chosen: isChosen(business.Name)}" ng-repeat="business in currentBusiness" ng-click="		businessClick($index)">
+		<span style="bottom:-27;position:absolute;margin-left:20px;">{{business.Name}}</span> 
+ 	</div>
+	</div>
+</div>

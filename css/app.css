@@ -4,7 +4,6 @@ ion-header-bar{
 
 .title{
     color: black !important;
-}
 
 .title-2help{
     margin: 7px !important;
@@ -141,9 +140,10 @@ ion-header-bar{
     float: left;
     margin: 10px;
 }
+}
 
 .tile.chosen {
-    background-color: green;
+    opacity: 0.4;
 }
 
 .tile {
@@ -152,27 +152,24 @@ ion-header-bar{
     background-repeat: no-repeat;
     background-position: center center;
     font-family: impact;
-    color: #333;
+    color: black;
     text-decoration: none;
     line-height: 100%;
-    white-space: nowrap;
+    word-wrap:wrap;
     display: inline-block;
     position: relative;
     vertical-align: middle;
-    margin: 0 2px 5px 0;
+    margin: 0px 15px 30px 0px;
     
     /* default button color */
-    background-color: #ececec;
-    border: solid 1px #b8b8b9;
-    
-    /* default box shadow */
-    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 1px 0 rgba(0,0,0,.1);
-    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 1px 0 rgba(0,0,0,.1);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 1px 0 rgba(0,0,0,.1);
-
-    /* default border radius */
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    }
     
 }
