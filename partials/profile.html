@@ -4,12 +4,13 @@
     <button class="button button-clear cards-header-btn" ng-click="goApp()"><img src="img/title-nav.png"/></button>
 </ion-header-bar>
 <ion-content>
-    <div class="box">
+    <div class="box" id="username">
         <p ng-bind="name"></p>
     </div>
     <img class="profile-pic" ng-src="{{image}}">
 
     <div class="box">
+    <img src="img/logo_face.png" style="float:left">
     <p>Your Amount : <span ng-bind="amount"></span></p>
     <p>Rank As Customer: <span ng-bind="RankAsCustomer"></span></p>
     <p>Rank As Supplier: <span ng-bind="RankAsSpplier"></span></p>
